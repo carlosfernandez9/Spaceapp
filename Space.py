@@ -72,7 +72,15 @@ def send_data():
     else:
         turns_remaining = 4
         start_time = None
+        response = {
+            "performed_action": "reset",
+            "turns_remaining": turns_remaining,
+            "time_remaining": 600,
+            "action_result": "Reset",
+            "message": "Time's up or no turns remaining, resetting game.",
+        }
+        return jsonify(response)
             
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    app.run(host='0.0.0.0', port=10001)
